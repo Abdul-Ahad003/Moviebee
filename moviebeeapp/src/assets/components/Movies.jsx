@@ -44,7 +44,7 @@ const Movies = () => {
 
   return (
     <>
-      <section className=' px-10 py-5 text-white'>
+      <section className=' md:px-10 px-2 md:py-5 py-3 text-white'>
         {loading && <div className='relative h-[90vh]'>
           <div className=' absolute md:top-1/2 md:left-1/2 top-[47vh] left-[42vw]'>
             <FadeLoader
