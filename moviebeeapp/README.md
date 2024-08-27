@@ -8,7 +8,9 @@ Steps to use the app :
 
 3. To add Movies aur Shows to favorites click on heart icon on the  details page.
 
-4. To search for movies and shows enter the name of the movie or show and hit Enter button on the keyboard. 
+4. To search for movies and shows enter the name of the movie or show and hit Enter button on the keyboard.
+
+5. Click on the clear all button to clear favorites list
 
 
 # Demo Link
