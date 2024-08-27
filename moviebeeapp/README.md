@@ -10,7 +10,7 @@ Steps to use the app :
 
 4. To search for movies and shows enter the name of the movie or show and hit Enter button on the keyboard.
 
-5. Click on the clear all button to clear favorites list
+5. Click on the clear all button to clear favorites list in the favorites section.
 
 
 # Demo Link
