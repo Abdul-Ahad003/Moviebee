@@ -1,4 +1,4 @@
-# React + Vite
+# Moviebee
 
 Steps to use the app :
 
