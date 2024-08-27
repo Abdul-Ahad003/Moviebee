@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  background-color: black;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #8000ff;
+}
+
+
+.menu{
+  animation: rightslide 0.8s ease-in-out forwards ;
+  animation-delay: 0.1s;
+}
+
+@keyframes rightslide {
+  0%{
+      transform: translateX(120px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
