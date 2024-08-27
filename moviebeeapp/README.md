@@ -15,4 +15,4 @@ Steps to use the app :
 
 # Demo Link
 
-https://moviebee.netlify.app/
+https://moviebeee.netlify.app/
