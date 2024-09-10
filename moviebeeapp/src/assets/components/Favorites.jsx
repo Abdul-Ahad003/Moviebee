@@ -16,10 +16,10 @@ const Favorites = () => {
 
   return (
     <>
-      <section className=' px-10 py-5 text-white '>
+      <section className=' md:px-10 md:py-5 px-6 py-2.5 text-white '>
           <div className=''>
             { favlist == 0 && <div className=' flex justify-center items-center'>
-              No items to added to favorites
+              No items added to favorites
             </div>}
 
             <div className=' flex flex-wrap items-center justify-center gap-4 py-6'>
@@ -28,8 +28,8 @@ const Favorites = () => {
               return (
                 <>
                   <div className=' flex items-center py-5 ' key={index}>
-                    {(Object.keys(movie).includes('release_date')) && <Moviecard poster={movie.poster_path} title={movie.title} content_type={movie.contentType} Id={movie._id} />}
-                    {(Object.keys(movie).includes('first_aired')) && <Showcard poster={movie.poster_path} title={movie.title} content_type={movie.contentType} Id={movie._id} />}
+                    {(Object.keys(movie).includes('release_date')) && <Moviecard poster={movie.poster_path} title={movie.title} date={movie.release_date} content_type={movie.contentType} Id={movie._id} />}
+                    {(Object.keys(movie).includes('first_aired')) && <Showcard poster={movie.poster_path} title={movie.title} date={movie.first_aired} content_type={movie.contentType} Id={movie._id} />}
                   </div>
                 </>
               )

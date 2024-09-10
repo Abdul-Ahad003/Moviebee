@@ -14,6 +14,8 @@ const Searchpage = () => {
 
 
 
+
+
   const [searchresult, setsearchresult] = useState([])
   const [loading, setloading] = useState(false)
 
@@ -23,7 +25,7 @@ const Searchpage = () => {
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '824e999803msh00569934219e0cdp1eb9b1jsncf9e4db86c1f',
+        'x-rapidapi-key': 'ac38813551msh32ad8e47f370f61p1e77c5jsnf56648b88da4',
         'x-rapidapi-host': 'movies-api14.p.rapidapi.com'
       }
     };
@@ -33,6 +35,7 @@ const Searchpage = () => {
       const result = await response.json();
       if (result) {
         setloading(false)
+        
         setsearchresult(result.contents)
       }
 
@@ -56,13 +59,18 @@ const Searchpage = () => {
       <section className=' md:px-10 md:py-5 px-6 py-2.5 text-white'>
         {loading &&
           <div className='relative h-[90vh]'>
-            <div className=' absolute md:top-1/2 md:left-1/2 top-[51vh] left-[42vw]'>
+            <div className=' absolute md:top-1/2 md:left-1/2 top-[45vh] left-[45%]'>
               <FadeLoader
                 color="#8000ff"
                 loading={loading}
                 size={15}
               />
             </div>
+          </div>
+        }
+        {
+          (loading == false && searchresult.length == 0 ) && <div  className=' font-Averia text-red-600 '>
+            <p className=' text-center'>Oops! No Results Found</p>
           </div>
         }
         <div className=' py-4'>

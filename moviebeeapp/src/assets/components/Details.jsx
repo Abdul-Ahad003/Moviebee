@@ -30,6 +30,7 @@ const Details = () => {
     const [votes, setvotes] = useState('')
     const [rating, setrating] = useState('')
     const [movieform, setmovieform] = useState({})
+    const [isfav, setisfav] = useState(false)
 
 
     const getmoviebyid = async () => {
@@ -38,7 +39,7 @@ const Details = () => {
         const options = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': '824e999803msh00569934219e0cdp1eb9b1jsncf9e4db86c1f',
+                'x-rapidapi-key': 'ac38813551msh32ad8e47f370f61p1e77c5jsnf56648b88da4',
                 'x-rapidapi-host': 'movies-api14.p.rapidapi.com'
             }
         };
@@ -94,8 +95,29 @@ const Details = () => {
     }, [])
 
     const handleFavorites = () => {
-        fav.current.src = './fav1.svg'
-        dispatch(addFav(movieform))
+        if (checkFavorites() == false){
+            fav.current.src = './fav1.svg'
+            dispatch(addFav(movieform))
+        }
+    }
+
+    
+    const img = ['./fav1.svg','./fav2.svg']
+
+    const checkFavorites = () => {
+
+        let b = false
+
+        if (favlist.lenght != 0){
+            favlist.map(i => {
+                
+                if (i._id === id){
+                    setisfav(true)
+                    b = true
+                }
+            })
+        }
+        return b
     }
 
     const convertToEmbed = (url) => {
@@ -115,7 +137,7 @@ const Details = () => {
             <section className=' md:px-10 md:pb-4 px-4 pb-3 '>
                 {loading &&
                     <div className='relative h-[90vh]'>
-                        <div className=' absolute md:top-1/2 md:left-1/2 top-[47vh] left-[42vw]'>
+                        <div className=' absolute md:top-1/2 md:left-1/2 top-[45vh] left-[45%]'>
                             <FadeLoader
                                 color="#8000ff"
                                 loading={loading}

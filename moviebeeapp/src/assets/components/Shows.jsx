@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Moviecard from './Moviecard'
 import FadeLoader from "react-spinners/FadeLoader";
+import Showcard from './Showcard';
 
 
 const Shows = () => {
@@ -16,7 +16,7 @@ const Shows = () => {
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '824e999803msh00569934219e0cdp1eb9b1jsncf9e4db86c1f',
+        'x-rapidapi-key': 'ac38813551msh32ad8e47f370f61p1e77c5jsnf56648b88da4',
         'x-rapidapi-host': 'movies-api14.p.rapidapi.com'
       }
     };
@@ -45,7 +45,7 @@ const Shows = () => {
     <>
       <section className=' md:px-10 px-2 md:py-5 py-3  text-white'>
         {loading && <div className='relative h-[90vh]'>
-          <div className=' absolute md:top-1/2 md:left-1/2 top-[47vh] left-[42vw]'>
+          <div className=' absolute md:top-1/2 md:left-1/2 top-[45vh] left-[45%]'>
             <FadeLoader
               color="#8000ff"
               loading={loading}
@@ -60,7 +60,7 @@ const Shows = () => {
               return (
                 <>
                   <div key={movie._id} className=' py-5 '>
-                    <Moviecard poster={movie.poster_path} title={movie.original_title} content_type={movie.contentType} desc={movie.overview} genre={movie.genres} date={movie.first_aired} Id={movie._id} />
+                    <Showcard poster={movie.poster_path} title={movie.original_title} content_type={movie.contentType} desc={movie.overview} genre={movie.genres} date={movie.first_aired} Id={movie._id} />
                   </div>
                 </>
               )

@@ -16,7 +16,6 @@ const Home = ({ showcategory }) => {
     const [loading, setloading] = useState(false)
 
     var settings = {
-        dots: true,
         infinite: false,
         speed: 1000,
         slidesToShow: 6,
@@ -53,11 +52,13 @@ const Home = ({ showcategory }) => {
 
     const getdata = async () => {
         setloading(true)
+        // 824e999803msh00569934219e0cdp1eb9b1jsncf9e4db86c1f
+        
         const url = 'https://movies-api14.p.rapidapi.com/home';
         const options = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': '824e999803msh00569934219e0cdp1eb9b1jsncf9e4db86c1f',
+                'x-rapidapi-key': 'ac38813551msh32ad8e47f370f61p1e77c5jsnf56648b88da4',
                 'x-rapidapi-host': 'movies-api14.p.rapidapi.com'
             }
         };
@@ -68,7 +69,6 @@ const Home = ({ showcategory }) => {
             if (result) {
                 setloading(false)
                 setdata(result)
-                console.log(result)
             }
 
 
@@ -87,7 +87,7 @@ const Home = ({ showcategory }) => {
         <>
             <section className=' movies md:px-10 md:py-5 px-5 py-2.5 text-white'>
                 {(showcategory == "Home" && loading) && <div className='relative h-[90vh]'>
-                    <div className=' absolute md:top-1/2 md:left-1/2 top-[47vh] left-[45vw]'>
+                    <div className=' absolute md:top-1/2 md:left-1/2 top-[45vh] left-[45%]'>
                         <FadeLoader
                             color="#8000ff"
                             loading={loading}
@@ -100,15 +100,15 @@ const Home = ({ showcategory }) => {
                         {data.length != 0 && data.map((item,index) => {
                             return (
                                 <>
-                                    <div  key={index} className=' flex flex-col  gap-8 py-4'>
-                                        <div className=' py-2 bg-[#111111] font-Ops'><span className='md:text-[23px] text-[18px] text-[#8000ff] md:px-3 px-1.5' >{item.title}</span></div>
+                                    <div  key={index} className=' flex flex-col justify-center gap-2 py-3'>
+                                        <div className=' py-1  font-Averia font-bold'><span className='md:text-[24px] text-[18px] text-[#8000ff] md:px-3 px-1.5' >{item.title}</span></div>
 
                                         <Slider {...settings}>
 
                                             {item.movies.map((movie) => {
                                                 return (
                                                     <>
-                                                        <div className=' flex  justify-center py-5 ' key={movie._id}>
+                                                        <div className=' flex  justify-center py-[18px]  items-center' key={movie._id}>
                                                             {(Object.keys(movie).includes('release_date')) && <Moviecard poster={movie.poster_path} title={movie.original_title} content_type={movie.contentType} desc={movie.overview} genre={movie.genres} date={movie.release_date} background={movie.backdrop_path} Id={movie._id} />}
                                                             {(Object.keys(movie).includes('first_aired')) && <Showcard poster={movie.poster_path} title={movie.original_title} content_type={movie.contentType} desc={movie.overview} genre={movie.genres} date={movie.first_aired} background={movie.backdrop_path} Id={movie._id} />}
                                                         </div>
