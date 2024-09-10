@@ -1,4 +1,4 @@
-# Moviebee
+# Movie Binge
 
 Steps to use the app :
 
