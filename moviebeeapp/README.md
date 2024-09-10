@@ -15,4 +15,4 @@ Steps to use the app :
 
 # Demo Link
 
-https://moviebeee.netlify.app/
+https://moviesbinge.netlify.app/
